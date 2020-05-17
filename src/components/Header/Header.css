@@ -5,8 +5,12 @@
 }
 
 .Header-title {
-    border: 1px solid black;
-    width: 50vw;
+    display: block;
+    width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 2vh;
+    text-decoration: none;
+    color: black;
+    padding: 2vh;
 }

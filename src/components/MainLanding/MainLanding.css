@@ -27,3 +27,18 @@
     padding: 3px;
     box-shadow: 5px 5px;
 }
+
+.MainLanding-login-button:hover {
+    cursor: pointer;
+}
+
+.popupContainer {
+    position: absolute;
+    border: 1px solid black;
+    width: 60vw;
+    height: 30vh;
+    background-color: gray;
+    z-index: 2;
+    left: 20vw;
+    top: 30vh;
+}

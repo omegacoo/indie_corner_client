@@ -7,11 +7,13 @@ exports[`App component renders UI correctly 1`] = `
   <div
     className="Header"
   >
-    <h1
+    <a
       className="Header-title"
+      href="/"
+      onClick={[Function]}
     >
       Indie Corner
-    </h1>
+    </a>
   </div>
   <div
     className="MainLanding"
@@ -21,23 +23,22 @@ exports[`App component renders UI correctly 1`] = `
     >
       Welcome to THE forum for the Indie Gaming Community!
     </h2>
-    <a
+    <div
       className="MainLanding-login-button"
-      href=""
       onClick={[Function]}
     >
       Log in
-    </a>
+    </div>
     <a
       className="MainLanding-register-button"
-      href=""
+      href="/register"
       onClick={[Function]}
     >
       Register
     </a>
     <a
       className="MainLanding-anonymous-button"
-      href=""
+      href="/forums"
       onClick={[Function]}
     >
       Go Anonymous
