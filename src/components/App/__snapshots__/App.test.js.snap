@@ -21,21 +21,27 @@ exports[`App component renders UI correctly 1`] = `
     >
       Welcome to THE forum for the Indie Gaming Community!
     </h2>
-    <button
+    <a
       className="MainLanding-login-button"
+      href=""
+      onClick={[Function]}
     >
       Log in
-    </button>
-    <button
+    </a>
+    <a
       className="MainLanding-register-button"
+      href=""
+      onClick={[Function]}
     >
       Register
-    </button>
-    <button
+    </a>
+    <a
       className="MainLanding-anonymous-button"
+      href=""
+      onClick={[Function]}
     >
       Go Anonymous
-    </button>
+    </a>
   </div>
 </div>
 `;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './MainLanding.css';
 
@@ -11,17 +12,17 @@ export default class MainLanding extends React.Component {
                     Welcome to THE forum for the Indie Gaming Community!
                 </h2>
 
-                <button className='MainLanding-login-button'>
+                <Link className='MainLanding-login-button'>
                     Log in
-                </button>
+                </Link>
 
-                <button className='MainLanding-register-button'>
+                <Link className='MainLanding-register-button'>
                     Register
-                </button>
+                </Link>
 
-                <button className='MainLanding-anonymous-button'>
+                <Link className='MainLanding-anonymous-button'>
                     Go Anonymous
-                </button>
+                </Link>
             </div>
         );
     };

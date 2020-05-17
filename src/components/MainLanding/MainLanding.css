@@ -12,9 +12,18 @@
     text-align: center;
 }
 
-.MainLanding button {
+.MainLanding-login-button,
+.MainLanding-register-button,
+.MainLanding-anonymous-button {
+    text-align: center;
     display: block;
     margin: 2vh;
     margin-left: auto;
     margin-right: auto;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 3px;
+    box-shadow: 5px 5px;
 }
