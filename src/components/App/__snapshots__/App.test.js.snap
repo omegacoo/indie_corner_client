@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders UI correctly 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="Header"
+  >
+    <h1
+      className="Header-title"
+    >
+      Indie Corner
+    </h1>
+  </div>
+  <div
+    className="MainLanding"
+  >
+    <h2
+      className="MainLanding-title"
+    >
+      Welcome to THE forum for the Indie Gaming Community!
+    </h2>
+    <button
+      className="MainLanding-login-button"
+    >
+      Log in
+    </button>
+    <button
+      className="MainLanding-register-button"
+    >
+      Register
+    </button>
+    <button
+      className="MainLanding-anonymous-button"
+    >
+      Go Anonymous
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders UI correctly 1`] = `
+<div
+  className="Header"
+>
+  <h1
+    className="Header-title"
+  >
+    Indie Corner
+  </h1>
+</div>
+`;
