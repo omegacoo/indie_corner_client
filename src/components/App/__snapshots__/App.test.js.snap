@@ -29,13 +29,12 @@ exports[`App component renders UI correctly 1`] = `
     >
       Log in
     </div>
-    <a
+    <div
       className="MainLanding-register-button"
-      href="/register"
       onClick={[Function]}
     >
       Register
-    </a>
+    </div>
     <a
       className="MainLanding-anonymous-button"
       href="/forums"
