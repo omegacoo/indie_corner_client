@@ -92,6 +92,7 @@ export default class MainLanding extends React.Component {
                                 type='password'
                             />
                             <br />
+                            
                             <label htmlFor='register_email'>Email: </label>
                             <input
                                 value={this.state.email}
