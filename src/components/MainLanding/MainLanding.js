@@ -27,7 +27,6 @@ export default class MainLanding extends React.Component {
             return(
                 <div className='popupContainer'>
                     <span className='popup'>
-                        <i className='closePopup far fa-times-circle' />
                         <button
                             onClick={ this.handleLoginClick }
                         >
@@ -69,23 +68,35 @@ export default class MainLanding extends React.Component {
                         >
                             X
                         </button>
-                        <i className='closePopup far fa-times-circle' />
                         <form 
-                            className='login_form'
-                            onSubmit={this.handleLoginSubmit}
+                            className='register_form'
+                            onSubmit={this.handleRegisterSubmit}
                         >
-                            <label htmlFor='login_username'>Username: </label>
+                            <label htmlFor='register_username'>Username: </label>
                             <input 
                                 value={this.state.username}
                                 onChange={this.handleUsernameChange}
                                 type='text'
                                 autoFocus
                             />
-                            <label htmlFor='login_password'>Password: </label>
+                            <label htmlFor='register_password'>Password: </label>
                             <input
                                 value={this.state.password}
                                 onChange={this.handlePasswordChange}
                                 type='password'
+                            />
+                            <label htmlFor='register_retype_password'>Retype password: </label>
+                            <input
+                                value={this.state.retypePassword}
+                                onChange={this.handleRetypePasswordChange}
+                                type='password'
+                            />
+                            <br />
+                            <label htmlFor='register_email'>Email: </label>
+                            <input
+                                value={this.state.email}
+                                onChange={this.handleEmailChange}
+                                type='email'
                             />
                             {this.state.error ? <h3 id='Login_error'>{this.state.error}</h3> : null}
                             <button className='login_button' type='submit'>login</button>
