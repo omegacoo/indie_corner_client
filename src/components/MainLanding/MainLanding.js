@@ -28,6 +28,11 @@ export default class MainLanding extends React.Component {
                 <div className='popupContainer'>
                     <span className='popup'>
                         <i className='closePopup far fa-times-circle' />
+                        <button
+                            onClick={ this.handleLoginClick }
+                        >
+                            X
+                        </button>
                         <form 
                             className='login_form'
                             onSubmit={this.handleLoginSubmit}
@@ -59,6 +64,11 @@ export default class MainLanding extends React.Component {
             return(
                 <div className='popupContainer'>
                     <span className='popup'>
+                        <button
+                            onClick={ this.handleRegisterClick }
+                        >
+                            X
+                        </button>
                         <i className='closePopup far fa-times-circle' />
                         <form 
                             className='login_form'
