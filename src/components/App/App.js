@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 
 import Header from '../Header/Header';
 import MainLanding from '../MainLanding/MainLanding';
+import Forums from '../Forums/Forums';
 import StoreContext from '../../StoreContext';
 
 import './App.css';
@@ -23,6 +24,10 @@ export default class App extends React.Component {
                     <Route 
                         exact path={'/'}
                         component={MainLanding}
+                    />
+                    <Route 
+                        path={'/forums'}
+                        component={Forums}
                     />
                 </StoreContext.Provider>
             </div>

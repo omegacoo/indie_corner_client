@@ -1,0 +1,22 @@
+.Forums {
+    border: 1px solid black;
+    height: calc(90vh - 4px); /* Remove after initial set up */
+    background-color: gray;
+}
+
+.forum {
+    border: 1px solid black;
+    width: 70vw;
+    list-style: none;
+    margin: 2vh;
+}
+
+.Forums-list {
+    overflow: auto;
+    height: 90%;
+}
+
+.forum h3,
+.forum p {
+    margin: 2vh;
+}
