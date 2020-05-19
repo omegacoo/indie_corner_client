@@ -11,5 +11,11 @@ exports[`Header component renders UI correctly 1`] = `
   >
     Indie Corner
   </a>
+  <button
+    className="logout-button"
+    onClick={[Function]}
+  >
+    logout
+  </button>
 </div>
 `;

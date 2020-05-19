@@ -9,9 +9,29 @@ import StoreContext from '../../StoreContext';
 import './App.css';
 
 export default class App extends React.Component {
+    state = {
+        loggedIn: false,
+    };
+
+    handleLogin = () => {
+        this.setState({
+            loggedIn: true
+        });
+    }
+
+    handleLogout = () => {
+        this.setState({
+            loggedIn: false
+        });
+    }
 
     render(){
-        let contextValue = {};
+        let contextValue = {
+            loggedIn: this.state.loggedIn,
+            handleLogin: this.handleLogin,
+            handleLogout: this.handleLogout
+        };
+        
         return(
             <div className='App'>
                 <StoreContext.Provider value={contextValue}>

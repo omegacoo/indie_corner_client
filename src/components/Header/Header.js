@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import StoreContext from '../../StoreContext';
+
 import './Header.css';
 
 export default class Header extends React.Component {
+    static contextType = StoreContext;
+
+    handleLogout = () => {
+        this.context.handleLogout();
+    }
 
     render(){
         return(
@@ -14,6 +21,7 @@ export default class Header extends React.Component {
                 >
                     Indie Corner
                 </Link>
+                { this.context.loggedIn ? <button className='logout-button' onClick={this.handleLogout}>logout</button> : null}
             </div>
         );
     };

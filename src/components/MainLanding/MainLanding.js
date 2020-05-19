@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import StoreContext from '../../StoreContext';
+
 import './MainLanding.css';
 
 export default class MainLanding extends React.Component {
+    static contextType = StoreContext;
+
     state = {
         loggingIn: false,
         registering: false,
@@ -14,6 +18,13 @@ export default class MainLanding extends React.Component {
         this.setState({
             loggingIn: !this.state.loggingIn
         });
+    }
+
+    handleLoginSubmit = e => {
+        e.preventDefault();
+        
+        this.context.handleLogin();
+        this.props.history.push('/forums');
     }
 
     handleRegisterClick = () => {
