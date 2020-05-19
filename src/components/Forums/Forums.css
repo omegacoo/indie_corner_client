@@ -9,7 +9,8 @@
     width: 75%;
 }
 
-.forum {
+.forum,
+.new-forum {
     border: 1px solid black;
     width: 92.5%;
     list-style: none;
@@ -17,6 +18,28 @@
 }
 
 .forum h3,
-.forum p {
+.forum p,
+.new-forum-title,
+.new-forum-blurb {
     margin: 2vh;
+}
+
+.delete-forum {
+    border: 1px solid black;
+    background-color: white;
+    float: right;
+    margin: .5vh;
+}
+
+.new-forum label {
+    display: block;
+    margin-left: 2vw;
+    margin-top: 1vh;
+}
+
+.new-forum-button {
+    border: 1px solid black;
+    background-color: white;
+    margin: .5vh;
+    margin-left: 77%;
 }

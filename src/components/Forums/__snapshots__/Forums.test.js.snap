@@ -9,8 +9,13 @@ exports[`Forums component renders UI correctly 1`] = `
   >
     <li
       className="forum"
-      id={1}
     >
+      <button
+        className="delete-forum"
+        onClick={[Function]}
+      >
+        X
+      </button>
       <h3>
         One
       </h3>
@@ -20,8 +25,13 @@ exports[`Forums component renders UI correctly 1`] = `
     </li>
     <li
       className="forum"
-      id={2}
     >
+      <button
+        className="delete-forum"
+        onClick={[Function]}
+      >
+        X
+      </button>
       <h3>
         two
       </h3>
@@ -31,8 +41,13 @@ exports[`Forums component renders UI correctly 1`] = `
     </li>
     <li
       className="forum"
-      id={3}
     >
+      <button
+        className="delete-forum"
+        onClick={[Function]}
+      >
+        X
+      </button>
       <h3>
         three
       </h3>
@@ -42,8 +57,13 @@ exports[`Forums component renders UI correctly 1`] = `
     </li>
     <li
       className="forum"
-      id={4}
     >
+      <button
+        className="delete-forum"
+        onClick={[Function]}
+      >
+        X
+      </button>
       <h3>
         four
       </h3>
@@ -53,8 +73,13 @@ exports[`Forums component renders UI correctly 1`] = `
     </li>
     <li
       className="forum"
-      id={5}
     >
+      <button
+        className="delete-forum"
+        onClick={[Function]}
+      >
+        X
+      </button>
       <h3>
         five
       </h3>
@@ -64,8 +89,13 @@ exports[`Forums component renders UI correctly 1`] = `
     </li>
     <li
       className="forum"
-      id={1}
     >
+      <button
+        className="delete-forum"
+        onClick={[Function]}
+      >
+        X
+      </button>
       <h3>
         One
       </h3>
@@ -75,8 +105,13 @@ exports[`Forums component renders UI correctly 1`] = `
     </li>
     <li
       className="forum"
-      id={2}
     >
+      <button
+        className="delete-forum"
+        onClick={[Function]}
+      >
+        X
+      </button>
       <h3>
         two
       </h3>
@@ -86,8 +121,13 @@ exports[`Forums component renders UI correctly 1`] = `
     </li>
     <li
       className="forum"
-      id={3}
     >
+      <button
+        className="delete-forum"
+        onClick={[Function]}
+      >
+        X
+      </button>
       <h3>
         three
       </h3>
@@ -97,8 +137,13 @@ exports[`Forums component renders UI correctly 1`] = `
     </li>
     <li
       className="forum"
-      id={4}
     >
+      <button
+        className="delete-forum"
+        onClick={[Function]}
+      >
+        X
+      </button>
       <h3>
         four
       </h3>
@@ -108,8 +153,13 @@ exports[`Forums component renders UI correctly 1`] = `
     </li>
     <li
       className="forum"
-      id={5}
     >
+      <button
+        className="delete-forum"
+        onClick={[Function]}
+      >
+        X
+      </button>
       <h3>
         five
       </h3>
@@ -119,8 +169,13 @@ exports[`Forums component renders UI correctly 1`] = `
     </li>
     <li
       className="forum"
-      id={1}
     >
+      <button
+        className="delete-forum"
+        onClick={[Function]}
+      >
+        X
+      </button>
       <h3>
         One
       </h3>
@@ -130,8 +185,13 @@ exports[`Forums component renders UI correctly 1`] = `
     </li>
     <li
       className="forum"
-      id={2}
     >
+      <button
+        className="delete-forum"
+        onClick={[Function]}
+      >
+        X
+      </button>
       <h3>
         two
       </h3>
@@ -141,8 +201,13 @@ exports[`Forums component renders UI correctly 1`] = `
     </li>
     <li
       className="forum"
-      id={3}
     >
+      <button
+        className="delete-forum"
+        onClick={[Function]}
+      >
+        X
+      </button>
       <h3>
         three
       </h3>
@@ -152,8 +217,13 @@ exports[`Forums component renders UI correctly 1`] = `
     </li>
     <li
       className="forum"
-      id={4}
     >
+      <button
+        className="delete-forum"
+        onClick={[Function]}
+      >
+        X
+      </button>
       <h3>
         four
       </h3>
@@ -163,14 +233,54 @@ exports[`Forums component renders UI correctly 1`] = `
     </li>
     <li
       className="forum"
-      id={5}
     >
+      <button
+        className="delete-forum"
+        onClick={[Function]}
+      >
+        X
+      </button>
       <h3>
         five
       </h3>
       <p>
         The fifth of many...
       </p>
+    </li>
+    <li
+      className="new-forum"
+    >
+      <form
+        className="new-forum-form"
+        onSubmit={[Function]}
+      >
+        <label
+          htmlFor="new-forum-title"
+        >
+          Title
+        </label>
+        <input
+          className="new-forum-title"
+          onChange={[Function]}
+          value=""
+        />
+        <label
+          htmlFor="new-forum-blurb"
+        >
+          Description
+        </label>
+        <input
+          className="new-forum-blurb"
+          onChange={[Function]}
+          value=""
+        />
+        <button
+          className="new-forum-button"
+          type="submit"
+        >
+          submit
+        </button>
+      </form>
     </li>
   </ul>
 </div>
