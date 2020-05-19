@@ -1,0 +1,60 @@
+.Posts {
+    border: 1px solid black;
+    height: calc(90vh - 4px); /* Remove after initial set up */
+}
+
+.Forum-name {
+    text-align: center;
+}
+
+.Posts-list {
+    overflow: auto;
+    height: 80%;
+    width: 75%;
+}
+
+.post,
+.new-post {
+    border: 1px solid black;
+    width: 92.5%;
+    list-style: none;
+    margin: 2vh;
+}
+
+.post h3,
+.post span,
+.post p,
+.new-post-content {
+    margin: 2vh;
+}
+
+.delete-post {
+    border: 1px solid black;
+    background-color: white;
+    float: right;
+    margin: .5vh;
+}
+
+.new-post label {
+    display: block;
+    margin-left: 2vw;
+    margin-top: 1vh;
+}
+
+.new-post-button {
+    border: 1px solid black;
+    background-color: white;
+    margin: .5vh;
+    margin-left: 77%;
+}
+
+.back-to-forums-button {
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    padding: .25vh;
+}

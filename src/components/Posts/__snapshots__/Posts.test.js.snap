@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Posts component renders UI correctly 1`] = `
+<div
+  className="Posts"
+>
+  <h2
+    className="Forum-name"
+  >
+    One
+  </h2>
+  <ul
+    className="Posts-list"
+  >
+    <li
+      className="post"
+    >
+      <button
+        className="delete-post"
+        onClick={[Function]}
+      >
+        X
+      </button>
+      <h3>
+        Kris
+      </h3>
+      <span>
+        2020-5-19 9:19:56
+      </span>
+      <p>
+        This is the first post Kris made
+      </p>
+    </li>
+    <li
+      className="post"
+    >
+      <button
+        className="delete-post"
+        onClick={[Function]}
+      >
+        X
+      </button>
+      <h3>
+        Riley
+      </h3>
+      <span>
+        2020-5-19 9:19:56
+      </span>
+      <p>
+        Riley cant read, her dad must have made this one
+      </p>
+    </li>
+    <li
+      className="post"
+    >
+      <button
+        className="delete-post"
+        onClick={[Function]}
+      >
+        X
+      </button>
+      <h3>
+        Coco
+      </h3>
+      <span>
+        2020-5-19 9:19:56
+      </span>
+      <p>
+        Coco is a dog, who made this for her?
+      </p>
+    </li>
+    <li
+      className="post"
+    >
+      <button
+        className="delete-post"
+        onClick={[Function]}
+      >
+        X
+      </button>
+      <h3>
+        Bill
+      </h3>
+      <span>
+        2020-5-19 9:19:56
+      </span>
+      <p>
+        Mr. Gates checking in
+      </p>
+    </li>
+    <li
+      className="new-post"
+    >
+      <form
+        className="new-post-form"
+        onSubmit={[Function]}
+      >
+        <label
+          htmlFor="new-post-content"
+        >
+          Post
+        </label>
+        <input
+          className="new-post-content"
+          onChange={[Function]}
+          value=""
+        />
+        <button
+          className="new-post-button"
+          type="submit"
+        >
+          submit
+        </button>
+      </form>
+    </li>
+  </ul>
+  <a
+    className="back-to-forums-button"
+    href="/forums"
+    onClick={[Function]}
+  >
+    Forums
+  </a>
+</div>
+`;

@@ -43,39 +43,52 @@ const fakeForums = [
         title: 'four',
         id: 9,
         blurb: 'The fourth of many...'
+    }
+];
+
+const fakePosts = [
+    {
+        user: 'Ben',
+        content: 'This is Bens first post!',
+        time: getCurrentTime(),
+        id: 1
     },
     {
-        title: 'five',
-        id: 10,
-        blurb: 'The fifth of many...'
+        user: 'Kris',
+        content: 'This is the first post Kris made',
+        time: getCurrentTime(),
+        id: 2
     },
     {
-        title: 'One',
-        id: 11,
-        blurb: 'The first of many...'
+        user: 'Riley',
+        content: 'Riley cant read, her dad must have made this one',
+        time: getCurrentTime(),
+        id: 3
     },
     {
-        title: 'two',
-        id: 12,
-        blurb: 'The second of many...'
+        user: 'Coco',
+        content: 'Coco is a dog, who made this for her?',
+        time: getCurrentTime(),
+        id: 4
     },
     {
-        title: 'three',
-        id: 13,
-        blurb: 'The third of many...'
-    },
-    {
-        title: 'four',
-        id: 14,
-        blurb: 'The fourth of many...'
-    },
-    {
-        title: 'five',
-        id: 15,
-        blurb: 'The fifth of many...'
+        user: 'Bill',
+        content: 'Mr. Gates checking in',
+        time: getCurrentTime(),
+        id: 5
     },
 ];
 
+function getCurrentTime(){
+    let today = new Date();
+    let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    let time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+    let dateTime = date + ' ' + time;
+
+    return dateTime;
+}
+
 module.exports = {
     fakeForums,
+    fakePosts
 };

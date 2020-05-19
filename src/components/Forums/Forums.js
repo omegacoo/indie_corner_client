@@ -1,15 +1,30 @@
 import React from 'react';
 
+import StoreContext from '../../StoreContext';
+
 import './Forums.css';
 
 import FakeStore from '../../fakeStore';
 
 export default class Forums extends React.Component {
+    static contextType = StoreContext;
+
     state = {
         forums: FakeStore.fakeForums,
         title: '',
-        blurb: ''
+        blurb: '',
+        user: 'anonymous',
+        content: ''
     };
+
+    getCurrentTime(){
+        let today = new Date();
+        let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        let time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+        let dateTime = date + ' ' + time;
+    
+        return dateTime;
+    }
 
     handleRemoveForum = id => {
         let newForums = this.state.forums.filter(forum => forum.id !== id);
@@ -49,9 +64,22 @@ export default class Forums extends React.Component {
         });
     }
 
+    handleForumClick = (e, id) => {
+        if(e.target.className === 'delete-forum'){
+            return;
+        }
+
+        this.context.handleForumSelect(id);
+        this.props.history.push('/posts');
+    }
+
     renderList = () => {
         return this.state.forums.map(forum => 
-                <li key={forum.id} className='forum'>
+                <li 
+                    key={forum.id} 
+                    className='forum'
+                    onClick={e => this.handleForumClick(e, forum.id)}
+                >
                     <button 
                         className='delete-forum'
                         onClick={() => this.handleRemoveForum(forum.id)}
