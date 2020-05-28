@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login component renders UI correctly 1`] = `
+<div
+  className="loginContainer"
+>
+  <span
+    className="popup"
+  >
+    <button
+      className="closeLogin"
+    >
+      X
+    </button>
+    <form
+      className="login_form"
+      onSubmit={[Function]}
+    >
+      <label
+        htmlFor="login_username"
+      >
+        Username: 
+      </label>
+      <input
+        autoFocus={true}
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <label
+        htmlFor="login_password"
+      >
+        Password: 
+      </label>
+      <input
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+      <button
+        className="login_button"
+        type="submit"
+      >
+        login
+      </button>
+    </form>
+  </span>
+</div>
+`;

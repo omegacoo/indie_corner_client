@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Login from '../Login/Login';
 import StoreContext from '../../StoreContext';
 
 import './MainLanding.css';
@@ -11,7 +12,7 @@ export default class MainLanding extends React.Component {
     state = {
         loggingIn: false,
         registering: false,
-        error: null,
+        error: null
     }
 
     handleLoginClick = () => {
@@ -31,42 +32,6 @@ export default class MainLanding extends React.Component {
         this.setState({
             registering: !this.state.registering
         });
-    }
-
-    renderLogin = () => {
-        if(this.state.loggingIn){
-            return(
-                <div className='popupContainer'>
-                    <span className='popup'>
-                        <button
-                            onClick={ this.handleLoginClick }
-                        >
-                            X
-                        </button>
-                        <form 
-                            className='login_form'
-                            onSubmit={this.handleLoginSubmit}
-                        >
-                            <label htmlFor='login_username'>Username: </label>
-                            <input 
-                                value={this.state.username}
-                                onChange={this.handleUsernameChange}
-                                type='text'
-                                autoFocus
-                            />
-                            <label htmlFor='login_password'>Password: </label>
-                            <input
-                                value={this.state.password}
-                                onChange={this.handlePasswordChange}
-                                type='password'
-                            />
-                            {this.state.error ? <h3 id='Login_error'>{this.state.error}</h3> : null}
-                            <button className='login_button' type='submit'>login</button>
-                        </form>
-                    </span>
-                </div>
-            )
-        }
     }
 
     renderRegistration = () => {
@@ -147,7 +112,7 @@ export default class MainLanding extends React.Component {
                     Go Anonymous
                 </Link>
 
-                { this.renderLogin() }
+                { this.state.loggingIn ? <Login handleClose={this.handleLoginClick} /> : null }
                 { this.renderRegistration() }
             </div>
         );

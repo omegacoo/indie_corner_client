@@ -16,7 +16,8 @@ export default class App extends React.Component {
         currentUser: 'anonymous'
     };
 
-    handleLogin = () => {
+    handleLogin = (username, password) => {
+        console.log(username, password);
         this.setState({
             loggedIn: true
         });
