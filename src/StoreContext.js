@@ -4,6 +4,7 @@ const StoreContext = React.createContext({
     loggedIn: Boolean,
     currentForum: 1,
     currentUser: 'anonymous',
+    userId: Number,
     forums: [],
     handleLogin: () => {},
     handleLogout: () => {},

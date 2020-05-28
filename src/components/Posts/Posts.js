@@ -52,12 +52,32 @@ export default class Posts extends React.Component {
     handleNewPostSubmit = e => {
         e.preventDefault();
 
-        let newPost = {
-            user: this.context.currentUser,
+        const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, "$1");
+        const myHeaders = new Headers();
+        myHeaders.append('Content-Type', "application/json");
+        myHeaders.append('Cookies', cookie);
+        const newPost = JSON.stringify({
+            user_id: this.context.userId,
+            forum_id: this.context.currentForum,
             content: this.state.content,
-            time: this.getCurrentTime(),
-            id: Math.floor(Math.random() * Math.floor(1000000))
-        };
+            time_submitted: this.getCurrentTime()
+        });
+
+        fetch(config.API_ENDPOINT + `/api/posts/${this.context.currentForum}`, { method: 'POST', body: newPost, headers: myHeaders })
+            .then(res => {
+                if(!res.ok){
+                    throw new Error(res.statusText);
+                }
+                this.fetchPosts();
+            })
+            .catch(err => {
+                console.log(err);
+                alert('You must be logged in to add posts!');
+            })
+        
+        this.setState({
+            content: ''
+        })
     }
 
     handleContentChange = e => {
@@ -87,8 +107,8 @@ export default class Posts extends React.Component {
                     X
                 </button>
                 <h3>{post.user}</h3>
-                <span>{post.time}</span>
                 <p>{post.content}</p>
+                <span>{post.time_submitted}</span>
             </li>
         )
     }

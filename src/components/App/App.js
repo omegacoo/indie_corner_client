@@ -81,6 +81,7 @@ export default class App extends React.Component {
             currentForum: this.state.currentForum,
             currentUser: this.state.currentUser,
             forums: this.state.forums,
+            userId: this.state.userId,
             handleLogin: this.handleLogin,
             handleLogout: this.handleLogout,
             handleForumSelect: this.handleForumSelect,
