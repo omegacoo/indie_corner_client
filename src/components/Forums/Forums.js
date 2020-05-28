@@ -48,11 +48,20 @@ export default class Forums extends React.Component {
     }
 
     handleRemoveForum = id => {
-        let newForums = this.state.forums.filter(forum => forum.id !== id);
+        const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, "$1");
+        const myHeaders = new Headers();
+        myHeaders.append('Cookies', cookie);
 
-        this.setState({
-            forums: newForums
-        });
+        fetch(config.API_ENDPOINT + `/api/forums/remove_forum/${id}`, { method: 'DELETE', headers: myHeaders })
+            .then(res => {
+                if(!res.ok){
+                    throw new Error(res.statusText);
+                }
+                this.fetchForums();
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
     handleNewForumSubmit = e => {
