@@ -1,4 +1,5 @@
 import React from 'react';
+import config from '../../config';
 
 import StoreContext from '../../StoreContext';
 
@@ -26,8 +27,40 @@ export default class Login extends React.Component {
 
     handleLoginSubmit = e => {
         e.preventDefault();
-        
-        this.context.handleLogin(this.state.username, this.state.password);
+
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        const myBody = JSON.stringify({ "user_name": this.state.username, "password": this.state.password });
+
+        fetch(config.API_ENDPOINT + '/api/auth/login',  { method: 'POST', body: myBody, headers: myHeaders })
+            .then(res => {
+                if(res.status === 401){
+                    throw new Error('Incorrect user_name or password') 
+                };
+                this.setState({
+                    error: null
+                });
+                
+                const Xtoken = res.headers.get('X-token');
+                const userId = res.headers.get('user_id');
+
+                this.setState({
+                    userId
+                });
+                
+                document.cookie = `token=${Xtoken}`;
+                                 
+                return res.text()
+            })
+            .then(resText => {
+                this.context.handleLogin(this.state.username, this.state.userId);
+                this.props.history.push('/forums');
+            })
+            .catch(err => {
+                this.setState({
+                    error: err.message
+                });
+            })
     }
 
     render(){

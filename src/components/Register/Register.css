@@ -1,0 +1,12 @@
+.registerContainer {
+    position: absolute;
+    border: 1px solid black;
+    background-color: white;
+    box-shadow: 5px 5px;
+    width: 60vw;
+    height: 35vh;
+    z-index: 2;
+    left: 20vw;
+    top: 30vh;
+    text-align: center;
+}

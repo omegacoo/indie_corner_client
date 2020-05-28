@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`YOUR_COMONENT_NAME component renders UI correctly 1`] = `
+<div
+  className="registerContainer"
+>
+  <span
+    className="popup"
+  >
+    <button
+      className="closeRegister"
+    >
+      X
+    </button>
+    <form
+      className="register_form"
+      onSubmit={[Function]}
+    >
+      <label
+        htmlFor="register_username"
+      >
+        Username: 
+      </label>
+      <input
+        autoFocus={true}
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <label
+        htmlFor="register_password"
+      >
+        Password: 
+      </label>
+      <input
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+      <label
+        htmlFor="register_confirm_password"
+      >
+        confirm password: 
+      </label>
+      <input
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+      <br />
+      <label
+        htmlFor="register_email"
+      >
+        Email: 
+      </label>
+      <input
+        onChange={[Function]}
+        type="email"
+        value=""
+      />
+      <button
+        className="login_button"
+        type="submit"
+      >
+        login
+      </button>
+    </form>
+  </span>
+</div>
+`;

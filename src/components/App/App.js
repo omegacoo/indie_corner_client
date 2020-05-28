@@ -12,20 +12,36 @@ import './App.css';
 export default class App extends React.Component {
     state = {
         loggedIn: false,
+        userName: '',
+        userId: null,
         currentForum: 1,
         currentUser: 'anonymous'
     };
 
-    handleLogin = (username, password) => {
-        console.log(username, password);
+    handleLogin = (userName, userId) => {
+        userId = parseInt(userId);
+
         this.setState({
-            loggedIn: true
+            loggedIn: true,
+            userName,
+            userId
         });
     }
 
     handleLogout = () => {
+        let cookies = document.cookie.split(";");
+
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            var eqPos = cookie.indexOf("=");
+            var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        };
+
         this.setState({
-            loggedIn: false
+            loggedIn: false,
+            userName: '',
+            userId: null
         });
     }
 
