@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import config from '../../config';
 
-import fakeStore from '../../fakeStore';
 import StoreContext from '../../StoreContext';
 
 import './Posts.css';
@@ -10,9 +10,31 @@ export default class Posts extends React.Component {
     static contextType = StoreContext;
 
     state = {
-        posts: fakeStore.fakePosts,
+        posts: [],
         content: ''
     };
+
+    componentDidMount(){
+        this.fetchPosts();
+    }
+
+    fetchPosts = () => {
+        fetch(config.API_ENDPOINT + `/api/posts/${this.context.currentForum}`)
+            .then(res => {
+                if(!res.ok){
+                    throw new Error(res.statusText);
+                }
+                return res.json();
+            })
+            .then(resJson => {
+                this.setState({
+                    posts: resJson
+                })
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
 
     getCurrentTime(){
         let today = new Date();
@@ -24,11 +46,7 @@ export default class Posts extends React.Component {
     }
 
     handleRemovePost = id => {
-        let newPosts = this.state.posts.filter(post => post.id !== id);
-
-        this.setState({
-            posts: newPosts
-        });
+        
     }
 
     handleNewPostSubmit = e => {
@@ -40,11 +58,6 @@ export default class Posts extends React.Component {
             time: this.getCurrentTime(),
             id: Math.floor(Math.random() * Math.floor(1000000))
         };
-
-        this.setState({
-            posts: [...this.state.posts, newPost],
-            content: ''
-        });
     }
 
     handleContentChange = e => {
@@ -54,7 +67,7 @@ export default class Posts extends React.Component {
     }
 
     getForumName = () => {
-        let forum = fakeStore.fakeForums.find(forum => forum.id === this.context.currentForum);
+        let forum = this.context.forums.find(forum => forum.id === this.context.currentForum);
 
         return forum.title;
     }

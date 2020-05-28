@@ -9,45 +9,14 @@ export default class Forums extends React.Component {
     static contextType = StoreContext;
 
     state = {
-        forums: [],
         title: '',
         blurb: '',
         user: 'anonymous',
         content: ''
     };
 
-    componentDidMount(){
-        this.fetchForums();
-    }
-
-    fetchForums = () => {
-        fetch(config.API_ENDPOINT + '/api/forums')
-            .then(res => {
-                if(!res.ok){
-                    throw new Error(res.statusText);
-                }
-                return res.json();
-            })
-            .then(resJson => {
-                this.setState({
-                    forums: resJson
-                })
-            })
-            .catch(err => {
-                console.log(err);
-            })
-    }
-
-    getCurrentTime(){
-        let today = new Date();
-        let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        let time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
-        let dateTime = date + ' ' + time;
-    
-        return dateTime;
-    }
-
     handleRemoveForum = id => {
+        console.log(id);
         const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, "$1");
         const myHeaders = new Headers();
         myHeaders.append('Cookies', cookie);
@@ -57,7 +26,9 @@ export default class Forums extends React.Component {
                 if(!res.ok){
                     throw new Error(res.statusText);
                 }
-                this.fetchForums();
+            })
+            .then(() => {
+                this.context.fetchForums();
             })
             .catch(err => {
                 console.log(err);
@@ -78,7 +49,7 @@ export default class Forums extends React.Component {
                 if(!res.ok){
                     throw new Error(res.statusText);
                 }
-                this.fetchForums();
+                this.context.fetchForums();
             })
             .catch(err => {
                 console.log(err);
@@ -109,11 +80,11 @@ export default class Forums extends React.Component {
         }
 
         this.context.handleForumSelect(id);
-        this.props.history.push('/posts');
+        this.props.history.push(`/posts/${id}`);
     }
 
     renderList = () => {
-        return this.state.forums.map(forum => 
+        return this.context.forums.map(forum => 
                 <li 
                     key={forum.id} 
                     className='forum'

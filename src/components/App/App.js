@@ -6,6 +6,7 @@ import MainLanding from '../MainLanding/MainLanding';
 import Forums from '../Forums/Forums';
 import Posts from '../Posts/Posts';
 import StoreContext from '../../StoreContext';
+import config from '../../config';
 
 import './App.css';
 
@@ -14,9 +15,32 @@ export default class App extends React.Component {
         loggedIn: false,
         userName: '',
         userId: null,
-        currentForum: 1,
-        currentUser: 'anonymous'
+        currentForum: null,
+        currentUser: 'anonymous',
+        forums: []
     };
+
+    componentDidMount(){
+        this.fetchForums();
+    }
+
+    fetchForums = () => {
+        fetch(config.API_ENDPOINT + '/api/forums')
+            .then(res => {
+                if(!res.ok){
+                    throw new Error(res.statusText);
+                }
+                return res.json();
+            })
+            .then(resJson => {
+                this.setState({
+                    forums: resJson
+                })
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
 
     handleLogin = (userName, userId) => {
         userId = parseInt(userId);
@@ -56,9 +80,11 @@ export default class App extends React.Component {
             loggedIn: this.state.loggedIn,
             currentForum: this.state.currentForum,
             currentUser: this.state.currentUser,
+            forums: this.state.forums,
             handleLogin: this.handleLogin,
             handleLogout: this.handleLogout,
-            handleForumSelect: this.handleForumSelect
+            handleForumSelect: this.handleForumSelect,
+            fetchForums: this.fetchForums,
         };
 
         return(
