@@ -46,7 +46,22 @@ export default class Posts extends React.Component {
     }
 
     handleRemovePost = id => {
-        
+        const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, "$1");
+        const myHeaders = new Headers();
+        myHeaders.append('Cookies', cookie);
+
+        fetch(config.API_ENDPOINT + `/api/posts/remove_post/${id}`, { method: 'DELETE', headers: myHeaders })
+            .then(res => {
+                if(!res.ok){
+                    throw new Error(res.statusText);
+                }
+            })
+            .then(() => {
+                this.fetchPosts();
+            })
+            .catch(err => {
+                console.log(err);
+            })        
     }
 
     handleNewPostSubmit = e => {
@@ -106,7 +121,7 @@ export default class Posts extends React.Component {
                 >
                     X
                 </button>
-                <h3>{post.user}</h3>
+                <h3>{post.user_name}</h3>
                 <p>{post.content}</p>
                 <span>{post.time_submitted}</span>
             </li>
