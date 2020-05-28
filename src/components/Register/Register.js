@@ -82,7 +82,7 @@ export default class Register extends React.Component {
         fetch(config.API_ENDPOINT + '/api/register', fetchOptions)
             .then(res => {
                 if(res.ok){
-                    this.props.history.push('/');
+                    this.props.handleClose();
                 };
                 res = res.json()
                     .then(resJson => {

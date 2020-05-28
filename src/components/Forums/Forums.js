@@ -1,21 +1,42 @@
 import React from 'react';
+import config from '../../config';
 
 import StoreContext from '../../StoreContext';
 
 import './Forums.css';
 
-import FakeStore from '../../fakeStore';
-
 export default class Forums extends React.Component {
     static contextType = StoreContext;
 
     state = {
-        forums: FakeStore.fakeForums,
+        forums: [],
         title: '',
         blurb: '',
         user: 'anonymous',
         content: ''
     };
+
+    componentDidMount(){
+        this.fetchForums();
+    }
+
+    fetchForums = () => {
+        fetch(config.API_ENDPOINT + '/api/forums')
+            .then(res => {
+                if(!res.ok){
+                    throw new Error(res.statusText);
+                }
+                return res.json();
+            })
+            .then(resJson => {
+                this.setState({
+                    forums: resJson
+                })
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
 
     getCurrentTime(){
         let today = new Date();
@@ -37,14 +58,23 @@ export default class Forums extends React.Component {
     handleNewForumSubmit = e => {
         e.preventDefault();
 
-        let newForums = this.state.forums;
-        let newForum = {
-            title: this.state.title,
-            blurb: this.state.blurb,
-            id: Math.floor(Math.random() * Math.floor(1000000))
-        };
+        const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, "$1");
+        const myHeaders = new Headers();
+        myHeaders.append('Content-Type', "application/json");
+        myHeaders.append('Cookies', cookie);
+        const myBody = JSON.stringify({ 'title': this.state.title, 'blurb': this.state.blurb });
 
-        newForums.push(newForum);
+        fetch(config.API_ENDPOINT + `/api/forums`, { method: 'POST', body: myBody, headers: myHeaders })
+            .then(res => {
+                if(!res.ok){
+                    throw new Error(res.statusText);
+                }
+                this.fetchForums();
+            })
+            .catch(err => {
+                console.log(err);
+                alert('You must be logged in to add forums!');
+            })
         
         this.setState({
             title: '',

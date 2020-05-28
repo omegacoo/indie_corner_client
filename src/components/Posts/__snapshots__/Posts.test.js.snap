@@ -25,7 +25,7 @@ exports[`Posts component renders UI correctly 1`] = `
         Kris
       </h3>
       <span>
-        2020-5-28 11:54:8
+        2020-5-28 12:46:18
       </span>
       <p>
         This is the first post Kris made
@@ -44,7 +44,7 @@ exports[`Posts component renders UI correctly 1`] = `
         Riley
       </h3>
       <span>
-        2020-5-28 11:54:8
+        2020-5-28 12:46:18
       </span>
       <p>
         Riley cant read, her dad must have made this one
@@ -63,7 +63,7 @@ exports[`Posts component renders UI correctly 1`] = `
         Coco
       </h3>
       <span>
-        2020-5-28 11:54:8
+        2020-5-28 12:46:18
       </span>
       <p>
         Coco is a dog, who made this for her?
@@ -82,7 +82,7 @@ exports[`Posts component renders UI correctly 1`] = `
         Bill
       </h3>
       <span>
-        2020-5-28 11:54:8
+        2020-5-28 12:46:18
       </span>
       <p>
         Mr. Gates checking in

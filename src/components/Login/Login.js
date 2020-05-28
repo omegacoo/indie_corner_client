@@ -10,7 +10,8 @@ export default class Login extends React.Component {
 
     state = {
         username: '',
-        password: ''
+        password: '',
+        userId: null
     }
 
     handleUsernameChange = e => {
