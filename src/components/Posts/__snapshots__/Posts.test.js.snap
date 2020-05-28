@@ -7,87 +7,11 @@ exports[`Posts component renders UI correctly 1`] = `
   <h2
     className="Forum-name"
   >
-    One
+    test forum
   </h2>
   <ul
     className="Posts-list"
   >
-    <li
-      className="post"
-    >
-      <button
-        className="delete-post"
-        onClick={[Function]}
-      >
-        X
-      </button>
-      <h3>
-        Kris
-      </h3>
-      <span>
-        2020-5-28 12:57:44
-      </span>
-      <p>
-        This is the first post Kris made
-      </p>
-    </li>
-    <li
-      className="post"
-    >
-      <button
-        className="delete-post"
-        onClick={[Function]}
-      >
-        X
-      </button>
-      <h3>
-        Riley
-      </h3>
-      <span>
-        2020-5-28 12:57:44
-      </span>
-      <p>
-        Riley cant read, her dad must have made this one
-      </p>
-    </li>
-    <li
-      className="post"
-    >
-      <button
-        className="delete-post"
-        onClick={[Function]}
-      >
-        X
-      </button>
-      <h3>
-        Coco
-      </h3>
-      <span>
-        2020-5-28 12:57:44
-      </span>
-      <p>
-        Coco is a dog, who made this for her?
-      </p>
-    </li>
-    <li
-      className="post"
-    >
-      <button
-        className="delete-post"
-        onClick={[Function]}
-      >
-        X
-      </button>
-      <h3>
-        Bill
-      </h3>
-      <span>
-        2020-5-28 12:57:44
-      </span>
-      <p>
-        Mr. Gates checking in
-      </p>
-    </li>
     <li
       className="new-post"
     >

@@ -2,12 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
+import StoreContext from '../../StoreContext';
 import Posts from './Posts';
 
 describe('Posts component', () => {
-    let context = {
+    let contextValue = {
         currentForum: 1,
-        currentUser: 'anonymous'
+        currentUser: 'anonymous',
+        forums: [
+            {
+                id: 1,
+                title: 'test forum'
+            },
+            {
+                id: 0,
+                title: 'test forum'
+            },
+            {
+                id: 2,
+                title: 'test forum'
+            },
+        ]
     };
 
     it('renders without crashing', () => {
@@ -15,7 +30,9 @@ describe('Posts component', () => {
 
         ReactDOM.render(
             <BrowserRouter>
-                <Posts context={context}/>
+                <StoreContext.Provider value={contextValue}>
+                    <Posts />
+                </StoreContext.Provider>
             </BrowserRouter>, 
             div
         );
@@ -26,7 +43,9 @@ describe('Posts component', () => {
         expect(
             renderer.create(
                 <BrowserRouter>
-                    <Posts context={context}/>
+                    <StoreContext.Provider value={contextValue}>
+                        <Posts />
+                    </StoreContext.Provider>
                 </BrowserRouter>
             ).toJSON()
         ).toMatchSnapshot();
