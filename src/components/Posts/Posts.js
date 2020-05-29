@@ -107,7 +107,7 @@ export default class Posts extends React.Component {
     }
 
     renderPosts = () => {
-        let forumPosts = this.state.posts.filter(post => post.id !== this.context.currentForum);
+        let forumPosts = this.state.posts.filter(post => post.id === this.context.currentForum);
 
         return forumPosts.map(post => 
             <li 
