@@ -52,7 +52,6 @@ export default class Forums extends React.Component {
             })
             .catch(err => {
                 console.log(err);
-                alert('You must be logged in to add forums!');
             })
         
         this.setState({

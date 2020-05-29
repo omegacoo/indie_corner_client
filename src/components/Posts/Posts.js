@@ -87,7 +87,6 @@ export default class Posts extends React.Component {
             })
             .catch(err => {
                 console.log(err);
-                alert('You must be logged in to add posts!');
             })
         
         this.setState({
