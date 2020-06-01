@@ -9,8 +9,8 @@ export default class Forums extends React.Component {
     static contextType = StoreContext;
 
     state = {
-        title: '',
-        blurb: '',
+        title: 'Title...',
+        blurb: 'Description...',
         user: 'anonymous',
         content: ''
     };
@@ -81,6 +81,20 @@ export default class Forums extends React.Component {
         this.props.history.push(`/posts/${id}`);
     }
 
+    clearText = e => {
+        e.target.value = '';
+    }
+
+    resetText = e => {
+        if(e.target.value === ''){
+            if(e.target.className === 'new-forum-title'){
+                e.target.value = this.state.title;
+            } else {
+                e.target.value = this.state.blurb;
+            }
+        }
+    }
+
     renderList = () => {
         return this.context.forums.map(forum => 
                 <li 
@@ -110,18 +124,20 @@ export default class Forums extends React.Component {
                             className='new-forum-form'
                             onSubmit={this.handleNewForumSubmit}
                         >
-                            <label htmlFor='new-forum-title'>Title</label>
                             <input 
                                 className='new-forum-title' 
                                 onChange={this.handleTitleChange}
                                 value={this.state.title}
+                                onFocus={ this.clearText }
+                                onBlur={ this.resetText }
                             />
                             
-                            <label htmlFor='new-forum-blurb'>Description</label>
                             <input 
                                 className='new-forum-blurb' 
                                 onChange={this.handleBlurbChange}
                                 value={this.state.blurb}
+                                onFocus={ this.clearText }
+                                onBlur={ this.resetText }
                             />
                             
                             <button 

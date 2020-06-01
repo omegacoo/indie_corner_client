@@ -1,20 +1,40 @@
 .Forums {
     border: 1px solid black;
-    height: calc(90vh - 4px); /* Remove after initial set up */
 }
 
 .Forums-list {
-    overflow: auto;
-    height: 90%;
+    overflow-y: auto;
+    height: 75vh;
     width: 75%;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 1px;
+}
+
+.Forums-list::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.Forums-list::-webkit-scrollbar:vertical {
+    width: 5px;
+}
+
+.Forums-list::-webkit-scrollbar:horizontal {
+    width: 11px;
+}
+
+.Forums-list::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 5px;
 }
 
 .forum,
 .new-forum {
-    border: 1px solid black;
-    width: 92.5%;
+    border: 5px solid white;
+    border-radius: 5px;
+    margin-top: 2vh;
     list-style: none;
-    margin: 2vh;
 }
 
 .forum h3,
