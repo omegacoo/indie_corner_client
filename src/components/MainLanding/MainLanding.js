@@ -13,10 +13,13 @@ export default class MainLanding extends React.Component {
     state = {
         loggingIn: false,
         registering: false,
-        error: null
+        error: null,
+        showButtons: false
     }
 
     handleLoginClick = () => {
+        this.toggleButtons();
+
         this.setState({
             loggingIn: !this.state.loggingIn
         });
@@ -29,9 +32,52 @@ export default class MainLanding extends React.Component {
     }
 
     handleRegisterClick = () => {
+        this.toggleButtons();
+
         this.setState({
             registering: !this.state.registering
         });
+    }
+
+    toggleButtons = () => {
+        this.setState({ 
+            showButtons: !this.state.showButtons 
+        })
+    }
+
+    renderButtons = () => {
+        if(this.state.showButtons){
+            return(
+                <div className='MainLanding-buttons'>
+                    <div 
+                        className='MainLanding-buttons-close'
+                        onClick={ this.toggleButtons }
+                    >
+                        X
+                    </div>
+                    <div 
+                        className='MainLanding-login-button'
+                        onClick={ this.handleLoginClick }
+                    >
+                        Log in
+                    </div>
+
+                    <div 
+                        className='MainLanding-register-button'
+                        onClick={ this.handleRegisterClick }
+                    >
+                        Register
+                    </div>
+
+                    <Link 
+                        className='MainLanding-anonymous-button'
+                        to={'/forums'}
+                    >
+                        Forums
+                    </Link>
+                </div>
+            );
+        }
     }
 
     render(){
@@ -42,27 +88,15 @@ export default class MainLanding extends React.Component {
                 </h2>
 
                 <div 
-                    className='MainLanding-login-button'
-                    onClick={ this.handleLoginClick }
+                    className='ShowButtons-button'
+                    onClick={() => this.setState({ showButtons: !this.state.showButtons })}
                 >
-                    Log in
+                    Enter
                 </div>
 
-                <div 
-                    className='MainLanding-register-button'
-                    onClick={ this.handleRegisterClick }
-                >
-                    Register
-                </div>
+                { this.renderButtons() }
 
-                <Link 
-                    className='MainLanding-anonymous-button'
-                    to={'/forums'}
-                >
-                    Go Anonymous
-                </Link>
-
-                { this.state.loggingIn ? <Login handleClose={this.handleLoginClick} history={this.props.history} /> : null }
+                { this.state.loggingIn ? <Login handleClose={this.handleLoginClick} history={this.props.history}  /> : null }
                 { this.state.registering ? <Register handleClose={this.handleRegisterClick} history={this.props.history} /> : null }
             </div>
         );

@@ -4,26 +4,59 @@
 }
 
 .MainLanding-title {
-    position: relative;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    font-weight: normal;
+    text-align: center;
+}
+
+.ShowButtons-button {
     border: 5px solid white;
     border-radius: 5px;
     width: fit-content;
-    padding: 1vh;
-    margin-left: 17.5vw;
-    margin-top: 10vh;
+    padding: 2vh;
     font-weight: normal;
-    z-index: 1;
+    font-size: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: repeating-linear-gradient(45deg, 
+                                            violet, 
+                                            indigo, 
+                                            blue, 
+                                            green, 
+                                            yellow, 
+                                            orange, 
+                                            red, 
+                                            violet);
+    background-size: 800% 800%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 8s ease infinite;
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 25%; }
+    100% { background-position: 0% 50%; }
 }
 
 .MainLanding-buttons {
-    position: relative;
     border: 5px solid white;
     border-radius: 5px;
     width: fit-content;
-    margin-left: 25vw;
-    margin-top: -7.5vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -18vh;
     background-color: black;
-    z-index: 2;
+    position: relative;
+}
+
+.MainLanding-buttons-close {
+    font-size: 3vh;
+    margin-left: 90%;
+    color: red;
 }
 
 .MainLanding-login-button,
@@ -32,6 +65,7 @@
     display: block;
     margin: 2vh;
     margin-left: 8vw;
+    margin-top: 0;
     text-decoration: none;
     color: white;
     width: fit-content;

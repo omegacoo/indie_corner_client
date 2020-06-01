@@ -1,5 +1,5 @@
 .registerContainer {
-    position: absolute;
+    position: relative;
     border: 5px solid white;
     border-radius: 5px;
     background-color: black;
@@ -7,15 +7,16 @@
     width: 40vw;
     height: fit-content;
     z-index: 2;
-    left: 35vw;
-    top: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -18vh;
     padding: 2vh;
 }
 
 .closeRegister {
     position: absolute;
     background-color: black;
-    color: white;
+    color: red;
     border: none;
     right: 0;
     top: 0;

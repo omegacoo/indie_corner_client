@@ -8,8 +8,9 @@
     height: fit-content;
     padding: 2vh;
     z-index: 2;
-    margin-left: 35vw;
-    margin-top: -22.5vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -18vh;
     z-index: 3;
 }
 
@@ -20,7 +21,7 @@
 .closeLogin {
     position: absolute;
     background-color: black;
-    color: white;
+    color: red;
     border: none;
     right: 0;
     top: 0;
