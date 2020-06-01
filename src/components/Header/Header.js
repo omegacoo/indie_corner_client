@@ -19,7 +19,7 @@ export default class Header extends React.Component {
                     className='Header-title'
                     to={'/'}
                 >
-                    Indie Corner
+                    <h1>Indie Corner</h1>
                 </Link>
                 { this.context.loggedIn ? <button className='logout-button' onClick={this.handleLogout}>logout</button> : null}
             </div>

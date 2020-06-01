@@ -1,7 +1,12 @@
 .Header {
     text-align: center;
-    border: 1px solid black;
+    border: 5px solid white;
+    border-radius: 5px;
     height: 10vh;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
 }
 
 .Header-title {
@@ -9,10 +14,14 @@
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2vh;
+    margin-top: -3vh;
     text-decoration: none;
-    color: black;
+    color: white;
     padding: 2vh;
+}
+
+.Header-title h1 {
+    font-weight: normal;
 }
 
 .logout-button {
