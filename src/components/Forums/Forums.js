@@ -106,7 +106,7 @@ export default class Forums extends React.Component {
                         className='delete-forum'
                         onClick={() => this.handleRemoveForum(forum.id)}
                     >
-                        X
+                        delete
                     </button>
                     <h3>{forum.title}</h3>
                     <p>{forum.blurb}</p>

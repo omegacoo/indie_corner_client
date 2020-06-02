@@ -1,22 +1,27 @@
 .Posts {
     border: 1px solid black;
-    height: calc(90vh - 4px); /* Remove after initial set up */
 }
 
 .Forum-name {
     text-align: center;
+    text-decoration: underline;
+    margin: 0;
 }
 
 .Posts-list {
-    overflow: auto;
-    height: 80%;
+    overflow-y: auto;
+    height: 70vh;
     width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    margin-top: 0;
 }
 
 .post,
 .new-post {
-    border: 1px solid black;
-    width: 92.5%;
+    border: 5px solid white;
+    border-radius: 5px;
     list-style: none;
     margin: 2vh;
 }
@@ -45,16 +50,17 @@
     border: 1px solid black;
     background-color: white;
     margin: .5vh;
-    margin-left: 77%;
+    margin-left: 73%;
 }
 
 .back-to-forums-button {
-    border: 1px solid black;
+    border: 5px solid white;
+    border-radius: 5px;
     text-decoration: none;
-    color: black;
+    color: white;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
-    padding: .25vh;
+    padding: 1vh;
 }

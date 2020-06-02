@@ -136,6 +136,7 @@ export default class Posts extends React.Component {
                     <li className='new-post'>
                         <form 
                             className='new-post-form'
+                            id='new-post-form'
                             onSubmit={this.handleNewPostSubmit}
                         >                            
                             <label htmlFor='new-post-content'>Post</label>
