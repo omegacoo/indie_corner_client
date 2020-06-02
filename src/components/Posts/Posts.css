@@ -14,8 +14,26 @@
     width: 75%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 0;
+    padding: 0;
     margin-top: 0;
+    padding-right: 1px;
+}
+
+.Posts-list::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.Posts-list::-webkit-scrollbar:vertical {
+    width: 5px;
+}
+
+.Posts-list::-webkit-scrollbar:horizontal {
+    width: 11px;
+}
+
+.Posts-list::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 5px;
 }
 
 .post,
@@ -23,7 +41,7 @@
     border: 5px solid white;
     border-radius: 5px;
     list-style: none;
-    margin: 2vh;
+    margin-top: 2vh;
 }
 
 .post h3,

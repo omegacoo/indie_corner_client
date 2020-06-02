@@ -40,7 +40,8 @@
 .forum h3,
 .forum p,
 .new-forum-title,
-.new-forum-blurb {
+.new-forum-blurb,
+.new-forum-header {
     margin: 2vh;
 }
 

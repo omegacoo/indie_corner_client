@@ -125,6 +125,7 @@ export default class Forums extends React.Component {
                             className='new-forum-form'
                             onSubmit={this.handleNewForumSubmit}
                         >
+                            <div className='new-forum-header'>New Forum</div>
                             <input 
                                 className='new-forum-title' 
                                 onChange={this.handleTitleChange}
