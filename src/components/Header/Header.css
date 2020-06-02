@@ -11,17 +11,18 @@
 
 .Header-title {
     display: block;
-    width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -3vh;
     text-decoration: none;
     color: white;
     padding: 2vh;
+    padding-top: 3vh;
+    font-size: 3.9vw;
 }
 
 .Header-title h1 {
     font-weight: normal;
+    margin: 0;
 }
 
 .Header-welcome {
@@ -29,8 +30,10 @@
     width: 100vw;
     text-align: center;
     top: 0;
+    left: 0;
     background-color: white;
     color: black;
+    font-size: 3vmax;
 }
 
 .logout-button {
@@ -39,7 +42,7 @@
     background-color: black;
     color: white;
     position: absolute;
-    top: 9vh;
-    right: 2vw;
+    top: 8.5vh;
+    right: 6.5vw;
     transform: rotate(90deg);
 }
