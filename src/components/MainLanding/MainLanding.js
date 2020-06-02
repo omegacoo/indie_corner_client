@@ -39,6 +39,16 @@ export default class MainLanding extends React.Component {
         });
     }
 
+    handleEnter = () => {
+        if(!this.context.loggedIn){
+            this.setState({
+                showButtons: !this.state.showButtons
+            })
+        } else {
+            this.props.history.push('/forums');
+        }
+    }
+
     toggleButtons = () => {
         this.setState({ 
             showButtons: !this.state.showButtons 
@@ -89,7 +99,7 @@ export default class MainLanding extends React.Component {
 
                 <div 
                     className='ShowButtons-button'
-                    onClick={() => this.setState({ showButtons: !this.state.showButtons })}
+                    onClick={ this.handleEnter }
                 >
                     Enter
                 </div>

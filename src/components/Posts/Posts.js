@@ -61,6 +61,7 @@ export default class Posts extends React.Component {
             })
             .catch(err => {
                 console.log(err);
+                alert('You must be logged in!');
             })        
     }
 
@@ -87,6 +88,7 @@ export default class Posts extends React.Component {
             })
             .catch(err => {
                 console.log(err);
+                alert('You must be logged in!');
             })
         
         this.setState({
@@ -107,7 +109,7 @@ export default class Posts extends React.Component {
     }
 
     renderPosts = () => {
-        let forumPosts = this.state.posts.filter(post => post.id === this.context.currentForum);
+        let forumPosts = this.state.posts.filter(post => post.forum_id === this.context.currentForum);
 
         return forumPosts.map(post => 
             <li 
@@ -118,7 +120,7 @@ export default class Posts extends React.Component {
                     className='delete-post'
                     onClick={() => this.handleRemovePost(post.id)}
                 >
-                    X
+                    delete
                 </button>
                 <h3>{post.user_name}</h3>
                 <p>{post.content}</p>
@@ -132,7 +134,7 @@ export default class Posts extends React.Component {
             <div className='Posts'>
                 <h2 className='Forum-name'>{this.getForumName()}</h2>
                 <ul className='Posts-list'>
-                    {this.renderPosts()}
+                    { this.renderPosts() }
                     <li className='new-post'>
                         <form 
                             className='new-post-form'

@@ -24,11 +24,22 @@
     font-weight: normal;
 }
 
-.logout-button {
-    border: 1px solid black;
-    background-color: white;
-    box-shadow: 5px 5px;
+.Header-welcome {
     position: absolute;
-    top: 4vh;
-    right: 4vw;
+    width: 100vw;
+    text-align: center;
+    top: 0;
+    background-color: white;
+    color: black;
+}
+
+.logout-button {
+    border: 5px solid white;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 9vh;
+    right: 2vw;
+    transform: rotate(90deg);
 }

@@ -12,17 +12,38 @@ export default class Header extends React.Component {
         this.context.handleLogout();
     }
 
+    renderWelcome = () => {
+        let user = this.context.userName;
+
+        if(user === 'anonymous'){
+            return(
+                <div className='Header-welcome'>
+                    Not currently logged in
+                </div>
+            );
+        }
+
+        return(
+            <div className='Header-welcome'>
+                Welcome back, {user}!
+            </div>
+        )
+    }
+
     render(){
         return(
-            <div className='Header'>
-                <Link 
-                    className='Header-title'
-                    to={'/'}
-                >
-                    <h1>Indie Corner</h1>
-                </Link>
-                { this.context.loggedIn ? <button className='logout-button' onClick={this.handleLogout}>logout</button> : null}
-            </div>
+            <>
+                { this.renderWelcome() }
+                <div className='Header'>
+                    <Link 
+                        className='Header-title'
+                        to={'/'}
+                    >
+                        <h1>Indie Corner</h1>
+                    </Link>
+                    { this.context.loggedIn ? <button className='logout-button' onClick={this.handleLogout}>logout</button> : null}
+                </div>
+            </>
         );
     };
 };

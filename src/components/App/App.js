@@ -13,10 +13,9 @@ import './App.css';
 export default class App extends React.Component {
     state = {
         loggedIn: false,
-        userName: '',
+        userName: 'anonymous',
         userId: null,
         currentForum: null,
-        currentUser: 'anonymous',
         forums: []
     };
 
@@ -64,7 +63,7 @@ export default class App extends React.Component {
 
         this.setState({
             loggedIn: false,
-            userName: '',
+            userName: 'anonymous',
             userId: null
         });
     }
@@ -79,7 +78,7 @@ export default class App extends React.Component {
         let contextValue = {
             loggedIn: this.state.loggedIn,
             currentForum: this.state.currentForum,
-            currentUser: this.state.currentUser,
+            userName: this.state.userName,
             forums: this.state.forums,
             userId: this.state.userId,
             handleLogin: this.handleLogin,
