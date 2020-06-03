@@ -121,41 +121,39 @@ export default class Forums extends React.Component {
             <div className='Forums'>
                 <ul className='Forums-list'>
                     { this.renderList() }
-                    <li className='new-forum'>
-                        <form 
-                            className='new-forum-form'
-                            onSubmit={this.handleNewForumSubmit}
-                        >
-                            { this.context.loggedIn ?
-                                <>
-                                <div className='new-forum-header'>New Forum</div>
-                                <input 
-                                    className='new-forum-title' 
-                                    onChange={this.handleTitleChange}
-                                    value={this.state.title}
-                                    onFocus={ this.clearText }
-                                    onBlur={ this.resetText }
-                                />
-                                
-                                <input 
-                                    className='new-forum-blurb' 
-                                    onChange={this.handleBlurbChange}
-                                    value={this.state.blurb}
-                                    onFocus={ this.clearText }
-                                    onBlur={ this.resetText }
-                                />
-                                
-                                <button 
-                                    className='new-forum-button' 
-                                    type='submit'
-                                >
-                                    submit
-                                </button>
-                                </>
-                                : null
-                            }
-                        </form>
-                    </li>
+                    { this.context.loggedIn ?
+                        <li className='new-forum'>
+                            <form 
+                                className='new-forum-form'
+                                onSubmit={this.handleNewForumSubmit}
+                            >
+                                    <div className='new-forum-header'>New Forum</div>
+                                    <input 
+                                        className='new-forum-title' 
+                                        onChange={this.handleTitleChange}
+                                        value={this.state.title}
+                                        onFocus={ this.clearText }
+                                        onBlur={ this.resetText }
+                                    />
+                                    
+                                    <input 
+                                        className='new-forum-blurb' 
+                                        onChange={this.handleBlurbChange}
+                                        value={this.state.blurb}
+                                        onFocus={ this.clearText }
+                                        onBlur={ this.resetText }
+                                    />
+                                    
+                                    <button 
+                                        className='new-forum-button' 
+                                        type='submit'
+                                    >
+                                        submit
+                                    </button>
+                            </form>
+                        </li>
+                        : null
+                    }
                 </ul>
             </div>
         );
