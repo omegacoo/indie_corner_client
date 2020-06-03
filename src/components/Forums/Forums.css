@@ -38,6 +38,12 @@
     list-style: none;
 }
 
+.forum:hover,
+.new-forum:hover {
+    cursor: pointer;
+    border-color: #27ae60;
+}
+
 .forum h3,
 .forum p,
 .new-forum-title,
@@ -52,6 +58,13 @@
     color: black;
     background-color: white;
     border: none;
+}
+
+.delete-forum:hover,
+.new-forum-button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: black;
 }
 
 .new-forum label {

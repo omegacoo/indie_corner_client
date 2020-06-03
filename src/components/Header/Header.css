@@ -7,6 +7,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 5vh;
+    overflow: hidden;
 }
 
 .Header-title {
@@ -17,7 +18,15 @@
     color: white;
     padding: 2vh;
     padding-top: 3vh;
+    padding-bottom: 0;
     font-size: 3.9vw;
+}
+
+.Header-title:hover,
+.logout-button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
 }
 
 .Header-title h1 {
@@ -63,7 +72,7 @@
 @media only screen and (orientation:landscape) {
     .Header {
         margin-top: 5vw;
-        height: 10vw;
+        height: 8vw;
     }
 
     .Header-title {
@@ -79,8 +88,12 @@
 }
 
 /* Desktop */
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1000px) {
     .Header-welcome {
         font-size: 2.5vh;
+    }
+
+    .Header-title {
+        padding-top: 0;
     }
 }

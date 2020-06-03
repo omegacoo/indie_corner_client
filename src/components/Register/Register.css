@@ -4,12 +4,12 @@
     border-radius: 5px;
     background-color: black;
     color: white;
-    width: 40vw;
+    width: 60vw;
     height: fit-content;
     z-index: 2;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -21vw;
+    margin-top: -50vw;
     padding: 2vh;
 }
 
@@ -21,6 +21,11 @@
     right: 0;
     top: 0;
     font-size: large;
+}
+
+.closeRegister:hover {
+    cursor: pointer;
+    color: white;
 }
 
 .registerContainer input {
@@ -35,5 +40,19 @@
 
     .registerContainer * {
         font-size: 3vw;
+    }
+}
+
+/* Mobile Landscape */
+@media only screen and (orientation:landscape) {
+    .registerContainer {
+        margin-top: -59vh;
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1000px) {
+    .registerContainer {
+        margin-top: -40vh;
     }
 }

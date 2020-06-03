@@ -10,7 +10,7 @@
 
 .Posts-list {
     overflow-y: auto;
-    height: 70vh;
+    height: 68vh;
     width: 75%;
     margin-left: auto;
     margin-right: auto;
@@ -44,6 +44,11 @@
     margin-top: 2vh;
 }
 
+.post:hover,
+.new-post:hover {
+    border-color: #27ae60;
+}
+
 .post h3,
 .post span,
 .post p,
@@ -51,11 +56,22 @@
     margin: 2vh;
 }
 
+.new-post-content {
+    width: 85%;
+}
+
 .delete-post {
-    border: 1px solid black;
+    border: none;
     background-color: white;
     float: right;
     margin: .5vh;
+}
+
+.new-post-button:hover,
+.delete-post:hover {
+    cursor: pointer;
+    color: white;
+    background-color: black;
 }
 
 .new-post label {
@@ -65,10 +81,10 @@
 }
 
 .new-post-button {
-    border: 1px solid black;
+    border: none;
     background-color: white;
     margin: .5vh;
-    margin-left: 73%;
+    display: block;
 }
 
 .back-to-forums-button {
@@ -81,4 +97,59 @@
     margin-right: auto;
     width: fit-content;
     padding: 1vh;
+    font-size: 2vw;
+}
+
+.back-to-forums-button:hover {
+    cursor: pointer;
+    color: black;
+    background-color: white;
+}
+
+/* iPad Portrait */
+@media only screen and (min-width: 420px) {
+    .post h3,
+    .post span,
+    .post p,
+    .new-post-content,
+    .new-post label {
+        font-size: 3vh;
+    }
+
+    .new-post-button,
+    .delete-post {
+        font-size: 2vh;
+    }
+}
+
+/* Mobile Landscape */
+@media only screen and (orientation: landscape) {
+    .Posts-list {
+        height: 47vh;
+    }
+
+    .post h3,
+    .post span,
+    .post p,
+    .new-post-content,
+    .new-post label {
+        font-size: 3vw;
+    }
+
+    .new-post-button,
+    .delete-post {
+        font-size: 2vw;
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1000px) {
+    .Posts-list {
+        height: 55vh;
+        margin-top: 5px;
+    }
+
+    .Forum-name {
+        font-size: 3vw;
+    }
 }

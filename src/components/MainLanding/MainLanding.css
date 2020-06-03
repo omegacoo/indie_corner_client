@@ -42,6 +42,13 @@
     100% { background-position: 0% 50%; }
 }
 
+.ShowButtons-button:hover {
+    cursor: pointer;
+    animation: none;
+    -webkit-text-fill-color: black;
+    background: white;
+} 
+
 .MainLanding-buttons {
     border: 5px solid white;
     border-radius: 5px;
@@ -57,6 +64,7 @@
     font-size: 3vh;
     margin-left: 90%;
     color: red;
+    text-align: center;
 }
 
 .MainLanding-login-button,
@@ -72,8 +80,11 @@
     padding: 2vh;
 }
 
-.MainLanding-login-button:hover {
+.MainLanding-login-button:hover,
+.MainLanding-register-button:hover,
+.MainLanding-anonymous-button:hover {
     cursor: pointer;
+    color: #27ae60;
 }
 
 .closeButtons {
@@ -84,6 +95,11 @@
     right: 0;
     top: 0;
     font-size: large;
+}
+
+.MainLanding-buttons-close:hover {
+    cursor: pointer;
+    color: white;
 }
 
 /* iPad Portrait */

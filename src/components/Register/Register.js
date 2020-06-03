@@ -146,7 +146,7 @@ export default class Register extends React.Component {
                             type='email'
                         />
                         {this.state.error ? <h3 id='Login_error'>{this.state.error}</h3> : null}
-                        <button className='login_button' type='submit'>login</button>
+                        <button className='login_button' type='submit'>Register</button>
                     </form>
                 </span>
             </div>
