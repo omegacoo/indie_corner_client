@@ -9,7 +9,7 @@
     z-index: 2;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -18vh;
+    margin-top: -21vw;
     padding: 2vh;
 }
 
@@ -25,4 +25,15 @@
 
 .registerContainer input {
     width: 90%;
+}
+
+/* iPad Portrait */
+@media only screen and (min-width: 420px) {
+    .registerContainer {
+        margin-top: -30vw;
+    }
+
+    .registerContainer * {
+        font-size: 3vw;
+    }
 }

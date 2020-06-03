@@ -47,6 +47,7 @@
     transform: rotate(90deg);
 }
 
+/* iPad Portrait */
 @media only screen and (min-width: 420px) {
     .Header-title {
         padding-top: 1.5vh;
@@ -55,5 +56,31 @@
     .logout-button {
         font-size: 2vh;
         right: 14vw;
+    }
+}
+
+/* Mobile Landscape */
+@media only screen and (orientation:landscape) {
+    .Header {
+        margin-top: 5vw;
+        height: 10vw;
+    }
+
+    .Header-title {
+        padding: 2vw;
+        padding-top: 1vw;
+    }
+
+    .logout-button {
+        font-size: 2vw;
+        top: 8.5vw;
+        right: 15vw;
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1100px) {
+    .Header-welcome {
+        font-size: 2.5vh;
     }
 }

@@ -1,6 +1,6 @@
 .MainLanding {
     border: 1px solid black;
-    height: fit-content;   /* Remove calc when done with design */
+    height: fit-content;
 }
 
 .MainLanding-title {
@@ -84,4 +84,49 @@
     right: 0;
     top: 0;
     font-size: large;
+}
+
+/* iPad Portrait */
+@media only screen and (min-width: 420px) {
+    .MainLanding-title {
+        font-size: 3vh;
+    }
+
+    .MainLanding-buttons {
+        padding: 1vh;
+        font-size: 5vw;
+    }
+
+    .MainLanding-login-button,
+    .MainLanding-register-button,
+    .MainLanding-anonymous-button {
+        margin-left: 5vh;
+    }
+}
+
+/* Mobile Landscape */
+@media only screen and (orientation: landscape) {
+    .MainLanding-title {
+        font-size: 3vw;
+    }
+
+    .ShowButtons-button {
+        font-size: 4vw;
+    }
+
+    .MainLanding-buttons {
+        margin-top: -21vw;
+        font-size: 3vw;
+    }
+
+    .MainLanding-buttons-close {
+        font-size: 3vw;
+        margin-left: 85%;
+    }
+
+    .MainLanding-login-button,
+    .MainLanding-register-button,
+    .MainLanding-anonymous-button {
+        margin-left: 1vw;
+    }
 }

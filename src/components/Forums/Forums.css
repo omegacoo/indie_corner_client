@@ -4,6 +4,7 @@
 
 .Forums-list {
     overflow-y: auto;
+    overflow-x: hidden;
     height: 75vh;
     width: 75%;
     padding-left: 0;
@@ -60,8 +61,46 @@
 }
 
 .new-forum-button {
-    border: 1px solid black;
+    display: block;
+    border: none;
     background-color: white;
+    color: black;
+    position: relative;
     margin: .5vh;
-    margin-left: 77%;
+}
+
+/* iPad Portrait */
+@media only screen and (min-width: 420px) {
+    .forum h3,
+    .forum p,
+    .new-forum-title,
+    .new-forum-blurb,
+    .new-forum-header {
+        font-size: 3vh;
+    }
+
+    .new-forum-button,
+    .delete-forum {
+        font-size: 2vh;
+    }
+}
+
+/* Mobile Landscape */
+@media only screen and (orientation: landscape) {
+    .Forums-list {
+        height: 55vh;
+    }
+
+    .forum h3,
+    .forum p,
+    .new-forum-title,
+    .new-forum-blurb,
+    .new-forum-header {
+        font-size: 3vw;
+    }
+    
+    .delete-forum,
+    .new-forum-button {
+        font-size: 2.5vw;
+    }
 }
