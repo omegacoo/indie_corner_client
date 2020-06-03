@@ -111,17 +111,24 @@ export default class Posts extends React.Component {
     renderPosts = () => {
         let forumPosts = this.state.posts.filter(post => post.forum_id === this.context.currentForum);
 
+        if(forumPosts.length === 0){
+            return <h2>No posts yet...</h2>
+        }
+
         return forumPosts.map(post => 
             <li 
                 key={post.id}
                 className='post'
             >
-                <button
-                    className='delete-post'
-                    onClick={() => this.handleRemovePost(post.id)}
-                >
-                    delete
-                </button>
+                { this.context.loggedIn ?
+                    <button
+                        className='delete-post'
+                        onClick={() => this.handleRemovePost(post.id)}
+                    >
+                        delete
+                    </button>
+                    : null
+                }
                 <h3>{post.user_name}</h3>
                 <p>{post.content}</p>
                 <span>{post.time_submitted}</span>
@@ -135,27 +142,30 @@ export default class Posts extends React.Component {
                 <h2 className='Forum-name'>{this.getForumName()}</h2>
                 <ul className='Posts-list'>
                     { this.renderPosts() }
-                    <li className='new-post'>
-                        <form 
-                            className='new-post-form'
-                            id='new-post-form'
-                            onSubmit={this.handleNewPostSubmit}
-                        >                            
-                            <label htmlFor='new-post-content'>New Post</label>
-                            <input 
-                                className='new-post-content' 
-                                onChange={this.handleContentChange}
-                                value={this.state.content}
-                            />
-                            
-                            <button 
-                                className='new-post-button' 
-                                type='submit'
-                            >
-                                submit
-                            </button>
-                        </form>
-                    </li>
+                    { this.context.loggedIn ?
+                        <li className='new-post'>
+                            <form 
+                                className='new-post-form'
+                                id='new-post-form'
+                                onSubmit={this.handleNewPostSubmit}
+                            >                            
+                                <label htmlFor='new-post-content'>New Post</label>
+                                <input 
+                                    className='new-post-content' 
+                                    onChange={this.handleContentChange}
+                                    value={this.state.content}
+                                />
+                                
+                                <button 
+                                    className='new-post-button' 
+                                    type='submit'
+                                >
+                                    submit
+                                </button>
+                            </form>
+                        </li>
+                        : null
+                    }
                 </ul>
                 <Link 
                     className='back-to-forums-button'
