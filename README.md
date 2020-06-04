@@ -14,15 +14,15 @@
 
 Landing:
 
-![landing page](src/assets/landing.png)
+![landing](src/assets/landing.PNG)
 
 Recipes:
 
-![forum](src/assets/forum.png)
+![forum](src/assets/forum.PNG)
 
 Posts:
 
-![posts](src/assets/posts.png)
+![posts](src/assets/posts.PNG)
 
 ## Built with:
 
