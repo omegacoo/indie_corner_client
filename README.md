@@ -12,7 +12,17 @@
 
 ## Screen Shots
 
-> To be added once the look has been completed!
+Landing:
+
+![landing page](src/assets/landing.png)
+
+Recipes:
+
+![forum](src/assets/forum.png)
+
+Posts:
+
+![posts](src/assets/posts.png)
 
 ## Built with:
 
