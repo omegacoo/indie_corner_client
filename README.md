@@ -16,7 +16,7 @@ Landing:
 
 ![landing](src/assets/landing.PNG)
 
-Recipes:
+Forums:
 
 ![forum](src/assets/forum.PNG)
 
