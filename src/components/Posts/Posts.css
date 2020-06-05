@@ -97,7 +97,7 @@
     margin-right: auto;
     width: fit-content;
     padding: 1vh;
-    font-size: 2vw;
+    font-size: 2vmax;
 }
 
 .back-to-forums-button:hover {
